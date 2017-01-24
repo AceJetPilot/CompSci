@@ -13,7 +13,6 @@ public class Main
         drawS();
         drawE();
         drawE();
-        System.out.println("\n\nThis is a test");
     }
 
     public static void drawT() {
