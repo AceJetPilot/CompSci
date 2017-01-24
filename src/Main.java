@@ -13,6 +13,8 @@ public class Main
         drawS();
         drawE();
         drawE();
+        double x = 2.5 * 2 + 8 / 5.0 + 10 / 3;
+        System.out.println("2 + 2 " + 3 + 4);
     }
 
     public static void drawT() {
