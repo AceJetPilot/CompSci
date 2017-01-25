@@ -3,7 +3,8 @@
  */
 public class Main
 {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         drawT();
         drawE();
         drawN();
@@ -13,11 +14,10 @@ public class Main
         drawS();
         drawE();
         drawE();
-        double x = 2.5 * 2 + 8 / 5.0 + 10 / 3;
-        System.out.println("2 + 2 " + 3 + 4);
     }
 
-    public static void drawT() {
+    public static void drawT()
+    {
         System.out.println("MMMMMMM");
         System.out.println("   M   ");
         System.out.println("   M   ");
@@ -27,7 +27,8 @@ public class Main
         System.out.println("   M   ");
     }
 
-    public static void drawE() {
+    public static void drawE()
+    {
         System.out.println("MMMMMMM");
         System.out.println("M");
         System.out.println("M");
@@ -37,7 +38,8 @@ public class Main
         System.out.println("MMMMMMM");
     }
 
-    public static void drawN() {
+    public static void drawN()
+    {
         System.out.println("M     M");
         System.out.println("MM    M");
         System.out.println("M M   M");
@@ -48,7 +50,8 @@ public class Main
         System.out.println();
     }
 
-    public static void drawS() {
+    public static void drawS()
+    {
         System.out.println(" MMMMM ");
         System.out.println("M     M");
         System.out.println("M");
