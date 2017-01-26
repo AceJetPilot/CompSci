@@ -3,6 +3,7 @@
  */
 public class Multipication
 {
+    public static final int TABLE_COUNT= 9;
     public static void main(String[] args)
     {
         greetUser();
@@ -19,15 +20,19 @@ public class Multipication
 
     public static void drawHeader()
     {
-        System.out.println("\t1\t2\t3\t4\t5\t6\t7\t8\t9\n");
+        for(int z = 1; z <= TABLE_COUNT; z++)
+        {
+            System.out.print("\t" + z);
+        }
+        System.out.println("\n");
     }
 
     public static void fillTable()
     {
-        for(int x = 1; x <= 9; x++)
+        for(int x = 1; x <= TABLE_COUNT; x++)
         {
             System.out.print(x);
-            for(int y = 1; y <= 9; y++)
+            for(int y = 1; y <= TABLE_COUNT; y++)
             {
                 System.out.print("\t" + x * y);
             }
