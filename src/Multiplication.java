@@ -1,9 +1,9 @@
 /**
  * Created by Ethan on 1/25/2017.
  */
-public class Multipication
+public class Multiplication
 {
-    public static final int TABLE_COUNT= 9;
+    public static final int TABLE_COUNT = 9;
     public static void main(String[] args)
     {
         greetUser();
@@ -12,12 +12,17 @@ public class Multipication
         goodbyeMessage();
     }
 
+    //Standard greeting for the user
     public static void greetUser()
     {
         System.out.println("\tWelcome to the Multipication");
         System.out.println("\t\tTable Application");
     }
 
+    /*
+     *Draws the header for the multiplication table
+     *Now based on the static integer: TABLE_COUNT
+     */
     public static void drawHeader()
     {
         for(int z = 1; z <= TABLE_COUNT; z++)
@@ -27,6 +32,7 @@ public class Multipication
         System.out.println("\n");
     }
 
+    //Fills the table with multiplication table numbers
     public static void fillTable()
     {
         for(int x = 1; x <= TABLE_COUNT; x++)
@@ -41,6 +47,7 @@ public class Multipication
         System.out.println();
     }
 
+    //prints goodbye to users
     public static void goodbyeMessage()
     {
         System.out.println("\tGoodbye and thank you for using");
