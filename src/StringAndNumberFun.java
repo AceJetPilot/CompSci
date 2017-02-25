@@ -26,7 +26,7 @@ public class StringAndNumberFun
         String FullName = FirstName.concat(" " + LastName);
         System.out.println("Hi " + FullName.toUpperCase());
 
-        System.out.println(reverseName(FullName) + "\n");
+        System.out.println("Your name printed in reverse is: " + reverseName(FullName) + "\n");
 
         System.out.println(FirstName + " " + LastName + "'s standard user name is: " + getUserName(FirstName, LastName) + "\n");
 
@@ -42,7 +42,7 @@ public class StringAndNumberFun
         //Exponent segment
         System.out.println("Enter a number between 2 and 8");
         int firstNumber = console.nextInt();
-        System.out.println("Enter another number between 2 and 8");
+        System.out.println("Enter an integer power between 2 and 10");
         int secondNumber = console.nextInt();
         System.out.println(firstNumber + "^" + secondNumber + " = " + getPowerOfValue(firstNumber, secondNumber));
     }
