@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * This program is designed to take the weighted average of a users quizes, tests, homework, and final exam and return
+ * This program is designed to take the weighted average of a users quizzes, tests, homework, and final exam and return
  * their final grade
  *
  * @Author Ethan Dritz
@@ -10,11 +10,13 @@ import java.util.Scanner;
 public class Grades
 {
     //Scanner declared globally for use in methods
-    private static Scanner console;
+    public static Scanner console = new Scanner(System.in);
 
+    /*
+     *@param not used
+     */
     public static void main(String[] args)
     {
-        Scanner console = new Scanner(System.in);
 
         giveIntro();
 
@@ -29,15 +31,15 @@ public class Grades
         System.out.println();
 
         double finalGrade = calculateFinalGrade(quizWeight, testWeight, homeworkWeight, finalWeight);
-        System.out.printf("Your final grade is: %.2f \n", finalGrade);
+        System.out.printf("\nYour final grade is: %.2f \n", finalGrade);
         getFinalLetterGrade(finalGrade);
     }
 
     //Gives a standard greeting to the user and describes the purpose to the program
     public static void giveIntro()
     {
-        System.out.println("Welcome to the grade calculator\n");
-        System.out.println("This program will input your homework, quizzes, tests,\nand final exam and calculate you average");
+        System.out.println("Welcome to the Grade Calculator!\n");
+        System.out.println("This program will input your homework, quizzes, tests,\nand final exam and calculate your average\n");
         System.out.println("Please enter the weights for the following categories....\n");
 
     }
@@ -45,12 +47,13 @@ public class Grades
     /*
      * Prompts the user to enter the number of grades that will be entered and then has the user enter grades one at a
      * time and then returns the average.
+     *
+     * @return the homework average
      */
     public static double getHomeworkAvg()
     {
-        Scanner console = new Scanner(System.in);
 
-        System.out.print("How many homework grades need to be entered?: ");
+        System.out.print("\nHow many homework grades need to be entered?: ");
         int gradeNumbers = console.nextInt();
         double rawTotal = 0;
         for(int x = 1; x <= gradeNumbers; x++)
@@ -61,11 +64,16 @@ public class Grades
         return rawTotal / gradeNumbers;
     }
 
+    /*
+     * Prompts the user to enter the number of grades that will be entered and then has the user enter grades one at a
+     * time and then returns the average.
+     *
+     * @return the quiz average
+     */
     public static double getQuizAvg()
     {
-        Scanner console = new Scanner(System.in);
 
-        System.out.print("How many quiz grades need to be entered?: ");
+        System.out.print("\nHow many quiz grades need to be entered?: ");
         int gradeNumbers = console.nextInt();
         double rawTotal = 0;
         for(int x = 1; x <= gradeNumbers; x++)
@@ -76,11 +84,16 @@ public class Grades
         return rawTotal / gradeNumbers;
     }
 
+    /*
+     * Prompts the user to enter the number of grades that will be entered and then has the user enter grades one at a
+     * time and then returns the average.
+     *
+     * @return the test average
+     */
     public static double getTestAvg()
     {
-        Scanner console = new Scanner(System.in);
 
-        System.out.print("How many test grades need to be entered?: ");
+        System.out.print("\nHow many test grades need to be entered?: ");
         int gradeNumbers = console.nextInt();
         double rawTotal = 0;
         for(int x = 1; x <= gradeNumbers; x++)
@@ -94,9 +107,8 @@ public class Grades
     //Takes and returns the users final exam grade
     public static double getFinalExamGrade()
     {
-        Scanner console = new Scanner(System.in);
 
-        System.out.print("Please enter your final exam grade: ");
+        System.out.print("\nPlease enter your final exam grade: ");
         return console.nextDouble();
     }
 
