@@ -27,8 +27,8 @@ public class AverageRainfall
             double averageRainfall = calculateTotalRainfall(years, totalRainfall);
 
             System.out.println("\nNumber of months: " + years * 12);
-            System.out.println("Total Rainfall: " + totalRainfall);
-            System.out.println("Average monthly rainfall: " + averageRainfall);
+            System.out.println("Total Rainfall: " + totalRainfall + " inches");
+            System.out.printf("Average monthly rainfall: %.2f inches\n", averageRainfall);
             System.out.println("Would you like to use the Rainfall Calculator again? (Y/N): ");
             console.nextLine();
             choice = console.nextLine();
@@ -44,13 +44,24 @@ public class AverageRainfall
 
     public static int getNumberOfYears()
     {
-        System.out.println("Please enter the number of years:");
-        while(!console.hasNextInt() && console.nextInt() >= 1)
+        boolean isValid = false;
+        int x = 0;
+
+        System.out.println("Enter the number of years: ");
+
+        while(!isValid)
         {
-            console.next();
-            System.out.println("Not an integer or not above zero, try again");
+            x = console.nextInt();
+            if(x <= 0)
+            {
+                System.out.println("Invalid. Enter 1 or greater: ");
+            }
+            if(x > 0)
+            {
+                isValid = true;
+            }
         }
-        return console.nextInt();
+        return x;
     }
 
     /*
@@ -71,17 +82,29 @@ public class AverageRainfall
             throw new IllegalArgumentException("Years number entered was below zero");
         }
 
+        System.out.println("Enter the rainfall, in inches, for each month.");
+
         for(int currentYear = 1; currentYear <= years; currentYear++)
         {
             for(int currentMonth = 1; currentMonth <= NUM_MONTHS; currentMonth++)
             {
+                boolean validMonth = false;
+                double monthRain = 0;
+
                 System.out.println("Year " + currentYear + " Month " + currentMonth + ": ");
-                while(!console.hasNextDouble() && console.nextDouble() < 0)
+                while(!validMonth)
                 {
-                    console.next();
-                    System.out.println("Error: Either you didn't enter a number of you entered negative rainfall, try again");
+                    monthRain = console.nextDouble();
+                    if(monthRain < 0)
+                    {
+                        System.out.println("Invalid. Enter a number greater than or equal to zero");
+                    }
+                    if(monthRain >= 0)
+                    {
+                        validMonth = true;
+                    }
                 }
-                totalRain += console.nextDouble();
+                totalRain += monthRain;
             }
         }
         return totalRain;
@@ -104,7 +127,7 @@ public class AverageRainfall
         }
         if(totalRain < 0)
         {
-            throw new IllegalArgumentException("Error: total rain is a negarive number");
+            throw new IllegalArgumentException("Error: total rain is a negative number");
         }
 
         return totalRain / (NUM_MONTHS * years);
